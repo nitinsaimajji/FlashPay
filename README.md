@@ -36,7 +36,7 @@ copy paste the content in the product table file
 ![Alt text](image-1.png)
 
 #### select the concert table and run the sql file (concert.sql)
-copy paste the content in the concert table file
+#### copy paste the content in the concert table file
 ---------------------------------------------------------------------
 
 
