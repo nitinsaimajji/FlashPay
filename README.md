@@ -4,7 +4,10 @@
 
 ###                                 install vscode
 ###                                 install nodejs
-###                                 install mysql            
+###                                 install mysql      
+
+----------------------------------------------------------------------------------------------------------------------
+
 #### in mysql installation add mysql workbench and mysql connector along with the packages mentioned in the below video .
 ##### https://youtu.be/9cI9UgK3qZA?si=TIdc_W1uojFOeEz9
 ##### follow the video step by step to complete the setup
