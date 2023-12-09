@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up layout</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+<body>
+
+
+    <form id="signup" name="signup"  action="/user/create" method="post">
+        <h1>Register</h1>
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="email" name="email"  placeholder="Email" required>
+        <input type="tel" name="phoneNo" pattern="[0-9]{10}" placeholder="Phone No" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+        <input class="btn" type="submit" value="Register">
+    </form>
+    <br>
+    <div class="bottom-span">
+    <span>Have an account?</span><a href="/user/sign-in"><button>Sign in</button></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/cart.css">
+</head>
+
+<body>
+    <%- include('_header'); %>
+    <div id="cart">
+        <div id="book-list-container">
+            <% if(products.length === 0) { %>
+            <div class="heading-container">
+                <h2 class="title heading">Your Cart is empty.</h3>
+                    <span class="price-heading">Price</span>
+            </div>
+            <div id="empty-cart-container">
+                <span>₹0.00</span>
+            </div>
+            <% } else {%>
+            <div id="books-list-container">
+                <div class="heading-container">
+                    <h2 class="title heading">Shopping Cart</h2>
+                    <span class="price-heading">Price</span>
+                </div>
+                <% for(product of products) { %>
+                <div class="book-container">
+                    <a href="product/<%= product.product_id %>">
+                        <div class="book-image-container">
+                            <img src="/static/images/<%= product.image%>" class="book-image">
+                        </div>
+                    </a>
+
+                    <div class="book-info-container">
+                        <a href="book/<%= product.product_id %>">
+                            <p class="book-title"><%=  product.title %></p>
+                        </a>
+                        <div class="quantity-container">
+                            <a href="/cart/add/?product_id=<%=product.product_id%>"><button
+                                    style="background-color:rgb(4, 109, 30);color:white;padding:6px;border:1px solid;border-radius:10px;cursor:pointer;">+</button></a>
+                            <%= product.quantity%>
+                            <a href="/cart/remove/?product_id=<%=product.product_id%>"><button
+                                    style="background-color:red;color:white;padding:6px;border:1px solid;border-radius:10px;cursor:pointer;">-</button></a>
+                        </div>
+                    </div>
+                    <div class="left-column">
+                        <% var result =parseFloat(product.price * (100 - product.discount) / 100);%>
+                        <p class="price-column">₹<%=result%></p>
+
+                        <a href="/cart/destroy/?product_id=<%=product.product_id%>">
+                            <button class="dutbin"
+                                style="background-color:red;color:white;padding:3px;cursor:pointer;">delete</button>
+                        </a>
+
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+        <div id="summary-container">
+            <p>Subtotal (<%= cartQuantity %> item): <span id="total-price">₹<%= (cartTotalPrice)%></span></p>
+            <% if(cartQuantity!=0) { %>
+            <a href="/order/order_choose"><button>Proceed to Buy</button></a>
+            <%}else {%>
+            <a href="#"><button>Proceed to Buy</button></a>
+            <%}%>
+        
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- <link rel="icon" href="/images/favicon.ico"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <%- style %>
+</head>
+
+<body>
+    <%- body %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <% if(flash.success && flash.success.length > 0) { %>
+    <script src='/js/flashMessages.js'></script>
+    <script>
+        new Noty({
+            theme: 'relax',     // relax:green , sunset:waste 
+            text: '<%= flash.success %>',
+            type: 'success',
+            layout: 'bottomRight',
+            timeout: 5000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
+
+    <% if(flash.error && flash.error.length > 0) { %>
+    <script>
+        new Noty({
+            theme: 'bootstrap-v4',
+            text: '<%= flash.error %>',
+            type: 'error',
+            layout: 'bottomRight',
+            timeout: 5000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
+
+    <% if(flash.alert && flash.alert.length > 0) { %>
+    <script>
+        new Noty({
+            theme: 'bootstrap-v4',
+            text: '<%= flash.alert %>',
+            type: 'success',
+            layout: 'bottomRight',
+            timeout: 2000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
+
+    <%- script %>
+</body>
+
+</html>

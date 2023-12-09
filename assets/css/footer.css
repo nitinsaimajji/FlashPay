@@ -1,0 +1,38 @@
+*{
+    font-family: sans-serif;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0px;
+    background-color:black;
+    color: white;
+    font-family: sans-serif;
+}
+
+footer div {
+    height: 180px;
+}
+
+footer div h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: rgb(114, 196, 13);
+}
+
+footer div ul {
+    list-style: none;
+}
+
+footer div ul li {
+    padding: 4px 0px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer div ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

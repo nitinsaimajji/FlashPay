@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin-top: 100px;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+      background-color: #444654;
+      font-family: sans-serif;
+    }
+
+    .container {
+      background-color: white;
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Payment Method</h2>
+    <p>Choose an option:</p>
+    <div class="button-container">
+      <a href="/buy/bookAll_credit"><button class="button">Credit_Card</button></a>
+      <a href="/buy/bookAll"><button class="button">Wallet</button></a>
+    </div>
+  </div>
+</body>
+
+</html>

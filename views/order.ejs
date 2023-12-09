@@ -1,0 +1,48 @@
+<script src="/static/js/spin.js"></script>
+<div id="page-reloader">
+    <div class="loader"></div>
+</div>
+<%- include('_header'); %>
+
+<link rel="stylesheet" href="/static/css/order.css">
+<div id="order">
+    <div id="order-list-container">
+        <% if(orders.length === 0) { %>
+        <div class="heading-container">
+            <h2 class="title heading">Orders</h2>
+            <span class="price-heading">Id</span>
+        </div>
+        <div id="empty-order-container">
+            <h2>No Orders Placed</h2>>
+
+        <% } else {%>
+        <div class="heading-container">
+            <h2 class="title heading">Orders</h2>
+            <span class="price-heading">Id</span>
+        </div>
+        <% for(order of orders) { %>
+        <div class="order-container">
+            <a href="book/<%= order.product_id %>">
+                <div class="order-image-container">
+                    <img src="/static/images/<%= order.image %>" class="order-image">
+                </div>
+            </a>
+
+            <div class="order-info-container">
+                <a href="book/<%= order.product_id %>">
+                    <%= order.title %> 
+                </a>
+                <p>Quantity: <%= order.quantity %> </p>
+                <p>Total: ₹<%= order.price %> </p>
+                <p><%= order.paymentMode %> </p>
+                <p>Order Placed: <%= order.paymentDate %></p>
+            </div>
+            <div class="left-column">
+                <p class="price-column">#<%= order.order_id %></p>
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+</div>
+

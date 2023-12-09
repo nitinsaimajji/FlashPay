@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="/static/css/pay.css">
+</head>
+<!--  -->
+<body>
+    <div class="container">
+        <% if(concerts.length === 0) { %>
+
+        <% } else {%>
+
+        <% for(concert of concerts) { %>
+        <div class="left-container">
+            <div class="concert_img">
+                <img src="/static/images/<%= concert.image%>" alt="Concert Image">
+            </div>
+            <div class="details">
+                <h2><%= concert.title%></h2>
+                <p><%= concert.price%></p>
+                <p><%= concert.description%></p>
+            </div>
+        </div>
+
+
+
+        <div class="right-container">
+            <div class="summary">
+                <h2>Summary</h2>
+                <div class="ticket">
+                    <div class="quantity">
+                        <a href="/buy/add/?concert_id=<%=concert.concert_id%>"><button
+                                style="background-color:rgb(4, 109, 30);color:white;margin-right: 4px;padding:4px;border:1px solid;border-radius:12px;cursor:pointer;">+</button></a>
+                        <%= concert.quantity%>
+                        <a href="/buy/remove/?concert_id=<%=concert.concert_id%>"><button
+                                style="background-color:red;color:white;padding:2px;margin-left:4px;border:1px solid;border-radius:12px;cursor:pointer;">-</button></a>
+
+                    </div>
+                </div>
+
+
+                <div class="total">
+                    <p class="text">Total tickets:</p>
+                    <p class="number" id="total-tickets"><%=Quantity%></p>
+                </div>
+
+                <div class="total">
+                    <p class="text">Select a category:</p>
+                    <a href="/buy/c_add/?concert_id=<%= concert.concert_id %>&category=Gold"><input type="button"
+                            id="java" name="language" value="Gold"></a>
+                    <a href="/buy/c_add/?concert_id=<%= concert.concert_id %>&category=Silver"><input type="button"
+                            id="java" name="language" value="Silver"></a>
+                    <a href="/buy/c_add/?concert_id=<%= concert.concert_id %>&category=Platinum"><input type="button"
+                            id="java" name="language" value="Platinum"></a>
+                </div>
+
+                <div class="total">
+                    <p class="text">Selected category Type:</p>
+                    <p class="number" id="total-tickets"><%=category%></p>
+                    <p class="text">Tax:</p>
+                    <p class="number" id="total-cost">₹ <%=tax%></p>
+                </div>
+
+                <div class="total-cost">
+                    <p class="text">Total cost:</p>
+                    <p class="number" id="total-cost">₹ <%=TotalPrice%></p>
+                </div>
+                <a href="/buy/destroy/?concert_id=<%= concert.concert_id%>"><button class="proceed"
+                        style="background-color: red;">cancel</button></a>
+                <a href="/buy/buy_choose"><button class="proceed">Proceed to Pay</button></a>
+            </div>
+        </div>
+    </div>
+    <%}%>
+    <%}%>
+
+
+    <div class="information-box">
+        <span class="info-icon">i</span>
+        <div class="info-content">
+            <pre>
+                <p>The rates of different category's are as follows</p>
+                <p>Silver : ₹200, Gold : ₹300, platinum : ₹400</p>
+            </pre>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+<%- include('_footer'); %>
+</html>

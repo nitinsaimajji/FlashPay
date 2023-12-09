@@ -1,0 +1,48 @@
+
+<%- include('_header'); %>
+<br>
+<title>Profile Update Page</title>
+<link rel="stylesheet" href="/static/css/profile.css" />
+  <body>
+    <header>
+      <h3 style="text-align: center;">Profile Details</h3>
+    </header>
+    <br>
+    <main>
+      <div class="profile-update-container">
+        <div class="profile-image">
+          <img src="/static/images/avatar.png" alt="Profile Image" />
+        </div>
+        <div class="profile-form-container">
+
+          <form action="/user/update" method="post">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
+          
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
+
+            <label for="lastName">Wallet Balance:</label>
+            <input type="text" id="account" name="account" value="<%= user.account %>" readonly>
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= user.email %>">
+          
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="<%= user.password %>">
+          
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" value="<%= user.password %>" >
+
+
+            <br>
+            <input type="submit" value="Update">
+          </form>          
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+<br>
+<br>
+<%- include('_footer'); %>

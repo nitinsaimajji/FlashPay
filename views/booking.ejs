@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Holder Example</title>
+    <link rel="stylesheet" href="static/css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<%- include('_header'); %>
+
+<body>
+
+    <div class="product-holder-wrapper" id="container">
+
+        <div class="product-head">
+            <h2>Bookings</h2>
+        </div>
+
+        <% for(concert of orders) { %>
+        <div class="product-holder" id="product-holder">
+            <img src="/static/images/<%= concert.image %>" alt="Product Image" class="product-image">
+            <div class="product-name"><%=concert.title%></div>
+            <div class="product-description">
+                <p><%=concert.description%></p>
+                <p>Category:<%=concert.category%></p>
+                <p>Tickets: <%=concert.quantity%> </p>
+            </div>
+            
+            <a href="booking/destroy/?booking_id=<%= concert.booking_id %>"><button
+                    class="book-ticket-button">Cancel</button>
+            </a>
+        </div>
+        <% } %>
+    </div>
+
+    <div class="buttons">
+        <button id="slide" type="button"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <button id="slideBack" type="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    </div>
+
+    <script>
+        var button = document.getElementById('slide');
+        button.onclick = function () {
+            var container = document.getElementById('container');
+            sideScroll(container, 'right', 100, 350, 10);
+        };
+
+        var back = document.getElementById('slideBack');
+        back.onclick = function () {
+            var container = document.getElementById('container');
+            sideScroll(container, 'left', 100, 350, 10);
+        };
+
+        function sideScroll(element, direction, speed, distance, step) {
+            var start = element.scrollLeft,
+                currentTime = 0,
+                increment = 20;
+
+            var animateScroll = function () {
+                currentTime += increment;
+                var val = Math.easeInOutQuad(currentTime, start, distance, speed);
+                if (direction == 'left') {
+                    element.scrollLeft = val;
+                } else {
+                    element.scrollLeft = -val;
+                }
+                if (currentTime < speed) {
+                    requestAnimationFrame(animateScroll);
+                }
+            };
+            animateScroll();
+        }
+
+        Math.easeInOutQuad = function (t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        };
+    </script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%- include('_footer'); %>
+
+</html>

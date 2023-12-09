@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%- include('_header'); %>
+
+<head>
+    <title>TOP UP</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<!--  -->
+
+<body>
+
+    <form id="signin" name="signin" form action="/user/topUp" method="post">
+        <h2>Wallet Top-up</h2>
+        <label for="text">Amount</label>
+        <input class="text" name="amount" type="number" step="0.01" pattern="^[0-9]+(\.[0-9]{1,2})?$" required>
+        <input class="btn" type="submit" value="Top-Up" />
+    </form>
+    <br>
+</body>
+
+</html>

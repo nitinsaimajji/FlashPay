@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-YxJsmTYkjSoUj+STH0n0U6h5U6JQ2xm8vO+7+lqJb/FDdc7cW8Yj+V7rlJmEeCk7TtTLMvkaX9PyxJF+JoRz2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<%- include('_header'); %>
+
+<body>
+
+
+
+    <section class="content-section2">
+
+        <div class="content">
+            <div class="logo">
+                <img src="/static/images/flash_pay2.png" alt="Logo">
+            </div>
+            <h2>Secure Transactions</h2>
+            <div class="content-text">
+                <p>FlashPay prioritizes the security of user transactions. It employs robust encryption protocols and
+                    multi-factor authentication to ensure the safety of sensitive data and prevent unauthorized access.
+                    Additionally, Flashpay operates with the approval and oversight of the Reserve Bank of India (RBI),
+                    adding an extra layer of trust.</p>
+            </div>
+
+            <% if (locals.user) { %>
+            <a href="/user/pay" style="text-decoration: none;"><button>Explore</button></a>
+            <%}else{%>
+            <a href="/user/sign-in" style="text-decoration: none;"><button>Explore</button></a>
+            <%}%>
+        </div>
+        <div class="image">
+            <img src="/static/images/pay_anyone.webp" alt="Image">
+        </div>
+    </section>
+
+    <section class="content-section">
+
+        <div class="content">
+            <div class="logo">
+                <img src="/static/images/flash_pay2.png" alt="Logo">
+            </div>
+            <h2>Easy and Convenient</h2>
+            <div class="content-text">
+                <p> FlashPay provides a user-friendly interface, making it easy to navigate and use. It allows users to
+                    make payments, send money, pay bills, and recharge their mobile phones with just a few taps on their
+                    smartphones. It eliminates the need for carrying cash or physical wallets, making transactions more
+                    convenient.</p>
+            </div>
+
+            <a href="#product1" style="text-decoration: none;"><button>Explore</button></a>
+        </div>
+        <div class="image">
+            <img src="/static/images/online.webp" alt="Image">
+        </div>
+    </section>
+
+
+    <section id="product1" class="section-p1">
+        <h2>Fresh Arrivals</h2>
+        <p>Featival Collection !</p>
+
+        <div class="prod-container">
+            <% for(product of products) { %>
+            <div class="prod">
+                <img src="/static/images/<%= product.image %>">
+                <div class="desc">
+                    <h5 style="color: white;"><%= product.title %></h5>
+                    <br>
+                    <h5 style="font-style: italic; color: white;">₹ <%= product.price %></h5>
+                </div>
+                <%if(product.addedToCart){%>
+                <a href="/cart"><i class="fas fa-check" style="color: white; background-color: rgb(249, 0, 0);"></i></a>
+                <%}else{%>
+                <a href="cart/add/?product_id=<%= product.product_id %>"><i class="fas fa-shopping-cart"
+                        style="color: white;"></i></a>
+                <%}%>
+                <a href="single-product.html"><i class="fas fa-eye" style="color: white;"></i></a>
+            </div>
+        <% } %>
+            </div>
+    </section>
+
+
+    <section class="content-section1">
+
+        <div class="content">
+            <div class="logo">
+                <img src="/static/images/flash_pay2.png" alt="Logo">
+            </div>
+            <h2>Multiple Payment Options</h2>
+            <div class="content-text">
+                <p>FlashPay supports various payment methods, including UPI (Unified Payments Interface), credit cards,
+                    and digital wallets. This versatility allows users to choose their preferred payment method
+                    and facilitates seamless transactions across different platforms.It also facilitaes the
+                    functionality of Wallet Top-Up.</p>
+            </div>
+
+            <button>Explore</button>
+        </div>
+        <div class="image">
+            <img src="/static/images/pay.webp" alt="Image">
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+<%- include('_footer'); %>

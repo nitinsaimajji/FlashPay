@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Successful</title>
+    <link rel="stylesheet" href="/static/css/payment.css">
+</head>
+
+<body>
+    <div id="content" style="display: none;">
+        <img src="/static/images/checklist.png">
+        <h2>Payment method: <%=c%> </h2>
+        <h1>Payment of ₹ <%=a%> was Successful</h1>
+        <p>Thank you for your payment. Your transaction has been processed successfully.</p>
+        <p>Your Credit Card Bill is ₹ <%=b%></p>
+        <a href="/order"><button>Go to Orders</button></a>
+        <a href="/booking"><button>Go to Bookings</button></a>
+    </div>
+
+    <script>
+        function showContent() {
+            var content = document.getElementById("content");
+            content.style.display = "block";
+        }
+
+        window.onload = function () {
+            var audio = new Audio("/static/music/now.mp3");
+            audio.onended = function () {
+                setTimeout(showContent,0); // Set delay as needed
+            };
+            audio.play();
+        };
+    </script>
+</body>
+
+</html>

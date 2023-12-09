@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #java{
+      background-color: #008CBA;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 15px;
+      font-size: 14px;
+      cursor: pointer;
+  }
+
+  body {
+    font-family: sans-serif;
+    background-color: aliceblue;
+    backdrop-filter: blur(80px);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(10,5,0,0.8);
+    overflow: hidden;
+  }
+  
+  .concert_img img{
+    max-height: 350px;
+     max-width: 400px;
+     margin-left: 15px;
+     margin-right: 25px;
+  }
+
+  .left-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .left-container .image {
+    margin-right: 20px;
+  margin-left: 20px;
+ }
+  
+  .left-container .details {
+    text-align: center;
+  }
+  
+  
+  .right-container {
+    background-color: #F2F2F2;
+    padding: 20px;
+    width: 50%;
+  }
+  
+  .right-container .summary {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+  }
+  
+  .right-container .summary h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .right-container .summary .ticket {
+    margin-bottom: 20px;
+  }
+  
+  .right-container .summary .ticket .name {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .right-container .summary .ticket .cost {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .right-container .summary .ticket .quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-container .summary .ticket .quantity button {
+    background-color: #FFC107;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .right-container .summary .ticket .quantity button:hover {
+    background-color: #FFA000;
+  }
+  
+  .right-container .summary .ticket .quantity input {
+    background-color: #F2F2F2;
+    border: none;
+    font-size: 20px;
+    height: 30px;
+    margin: 0 5px;
+    text-align: center;
+    width: 40px;
+  }
+  
+  .right-container .summary .total,
+  .right-container .summary .total-cost {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .right-container .summary .total p.text,
+  .right-container .summary .total-cost p.text {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .right-container .summary .total p.number,
+  .right-container .summary .total-cost p.number {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .right-container .summary .proceed {
+    display: inline-block;
+    background-color: #FFC107;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    margin-top: 20px;
+    width: 40%; 
+    margin-right: 2%; 
+   }
+  
+  .right-container .summary .proceed:hover {
+    background-color: #FFA000;
+  }
+  
+  
+
+
+.information-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:rgb(208, 231, 250);
+  padding: 20px;
+  margin:0 auto;
+  width: 500px;
+}
+
+.info-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #4c8bf5;
+  color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.info-content {
+  display: none;
+  font-size: 16px;
+}
+
+.info-icon:hover + .info-content,
+.info-content:hover {
+  display: block;
+}
+
+.item-removed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-removed h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.item-removed span {
+  display: inline-block;
+  background-color: #FFC107;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-removed span:hover {
+  background-color: #FFA000;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+        body{
+            text-align: center;
+            background-image: url('/static/images/payment.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .form{
+            width: 300px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            background: #e5e5e3;
+            padding: 32px;
+            border-radius: 20px;
+            border:1px solid rgb(176, 175, 175);
+        }
+        input{
+            padding: 0.6rem;
+            margin: 5px;
+        }
+        .btn{
+            background: #007bff;
+            color: white;
+            margin: 20px 0;
+            font-size:1rem;
+            border: none;
+            padding:10px ;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .otpverify{
+            display: none;
+        }
+
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1>Payment Verification</h1>
+    <div class="form">
+        <input type="email" id="email" placeholder="Enter Email..." value="<%= user.email %>" readonly>
+
+        <div class="otpverify">
+            <input type="text" id="otp_inp" placeholder="Enter the OTP sent to your Email...">
+            <br>
+            <br>
+            <button class="btn" id="otp-btn">Verify</button>
+        </div>
+
+        <button onclick="sendOTP()" class="btn">Send OTP</button>
+    </div>
+
+    <script src="/static/js/otp.js"></script>
+</body>
+</html>
