@@ -13,7 +13,7 @@ https://youtu.be/5liv67qsMyI?si=zErVvNnlRp2F6RjN
 https://youtu.be/9cI9UgK3qZA?si=TIdc_W1uojFOeEz9
 ##### follow the video step by step to complete the setup
 ##### setup mysql passwords and all stuff
-##### create a table 
+### create a db in your mysql
 -------------------------------------------------------------------------------------------------------------------------
 ### open the project folder in vscode 
  
